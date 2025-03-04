@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash Message</title>
+    <link rel="stylesheet" href="toastr.min.css">
+</head>
+
+<body>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <!-- Toster Script -->
+    <script src="toastr.min.js"></script>
+    <!-- Show flash message according to session  -->
+    <script type="text/javascript">
+        if ("{{ session('success') }}") {
+            toastr.success("{{ session('success') }}", "Success", {
+                positionClass: "toast-top-right",
+            });
+        }
+
+        if ("{{ session('error') }}") {
+            toastr.error("{{ session('error') }}", "Error", {
+                positionClass: "toast-top-right",
+            });
+        }
+
+        if ("{{ session('info') }}") {
+            toastr.info("{{ session('info') }}", "Info", {
+                positionClass: "toast-top-right",
+            });
+        }
+
+        if ("{{ session('warning') }}") {
+            toastr.warning("{{ session('warning') }}", "Warning", {
+                positionClass: "toast-top-right",
+            });
+        }
+    </script>
+</body>
+
+</html>
